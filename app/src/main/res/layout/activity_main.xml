@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/organ_chip_grp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:singleLine="true"
+            app:singleSelection="true"
+            app:chipSpacingHorizontal="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dropdown_menu"
+            app:layout_constraintTop_toTopOf="@+id/dropdown_menu"
+            app:layout_constraintBottom_toBottomOf="@+id/dropdown_menu">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/total_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:text="전체" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/brain_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:text="뇌" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/lung_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:text="폐" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/liver_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:text="간" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/kidney_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:text="신장" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dropdown_menu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="단위"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/menu_filed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:freezesText="false"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/organ_chip_grp">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
